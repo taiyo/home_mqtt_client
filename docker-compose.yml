@@ -8,6 +8,8 @@ services:
     tty: true
     volumes:
       - ./python:/root/python
+    env_file:
+      - app.env
     entrypoint:
       - python
       - python/mqtt.py
