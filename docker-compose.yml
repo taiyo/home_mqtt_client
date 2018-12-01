@@ -1,0 +1,13 @@
+version: '3'
+services:
+  mqtt:
+    restart: always
+    build: .
+    container_name: 'mqtt'
+    working_dir: '/root/'
+    tty: true
+    volumes:
+      - ./python:/root/python
+    entrypoint:
+      - python
+      - python/mqtt.py
